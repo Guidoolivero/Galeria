@@ -2,119 +2,72 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="lightbox.min.css"> -->
-    <title>gallery</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="lightbox.min.css">
+        <title>Galeria</title>
 </head>
 
 <body>
-    <h1>Galería de autos</h1>
+        <h1>Galería de autos</h1>
 
-    <div class="gallery">
-        <img src="/img/aaron-huber-8qYE6LGHW-c-unsplash.jpg" id="mainImage" alt="Imagen 1" onclick="openModal(this);">
-        <img src="/img/alex-suprun-A53o1drQS2k-unsplash.jpg" alt="Imagen 2" onclick="openModal(this);">
-        <img src="/img/chris-nguyen-aTX_bRaOZnA-unsplash.jpg" alt="Imagen 3" onclick="openModal(this);">
-    </div>
-
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal();">&times;</span>
-        <img class="modal-content" id="modalImage">
-        <button class="prev" id="prevBtn" onclick="showPrevImage()">&#10094;</button>
-        <button class="next" id="nextBtn" onclick="showNextImage()">&#10095;</button>
-    </div>
-
-
-
-
-
-    <!-- <div class="row">
-
-        <div class="column">
-            <img src="/img/aaron-huber-8qYE6LGHW-c-unsplash.jpg" onclick="openModal();currentSlide(1)"
-                class="hover-shadow" alt="">
-        </div>
-        <div class="column">
-            <img src="/img/alex-suprun-A53o1drQS2k-unsplash.jpg" onclick="openModal();currentSlide(2)"
-                class="hover-shadow" alt="">
-        </div>
-        <div class="column">
-            <img src="/img/chris-nguyen-aTX_bRaOZnA-unsplash.jpg" onclick="openModal();currentSlide(3)"
-                class="hover-shadow" alt="">
-        </div>
-        <div class="column">
-            <img src="/img/dhiva-krishna-YApS6TjKJ9c-unsplash.jpg" onclick="openModal();currentSlide(4)"
-                class="hover-shadow" alt="">
+        <div class="flechas">
+                <img src="/img/close.png" alt="">
+                <img src="/img/prev.png" id="prevBtn" alt="">
+                <img src="/img/next.png" id="nextBtn" alt="">
         </div>
 
-    </div>
+        <div class="gallery">
+                <img class="gallery-img" id="mainImage" src="/img/chris-nguyen-aTX_bRaOZnA-unsplash.jpg" alt="">
 
-    <div class="modal" id="">
+                <div id="myModal" class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="modalImage">
+                </div>
+                
+                <a href="/img/dhiva-krishna-YApS6TjKJ9c-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img"
+                                id="img" src="/img/dhiva-krishna-YApS6TjKJ9c-unsplash.jpg" alt=""></a>
+                <a href="/img/dima-panyukov-DwxlhTvC16Q-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img"
+                                id="img" src="/img/dima-panyukov-DwxlhTvC16Q-unsplash.jpg" alt=""></a>
+                <a href="/img/aaron-huber-8qYE6LGHW-c-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img"
+                                id="img" src="/img/aaron-huber-8qYE6LGHW-c-unsplash.jpg" alt=""></a>
 
-    </div> -->
+                <a href="/img/alex-suprun-A53o1drQS2k-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img"
+                                id="img" src="/img/alex-suprun-A53o1drQS2k-unsplash.jpg" alt=""></a>
 
-    <!-- <div class="row" id="myModal">
-        <img src="/img/aaron-huber-8qYE6LGHW-c-unsplash.jpg" class="hover-shadow" id="mainImage" alt=""
-            onclick="openModal(); currentSlide(1)">
-        <img src="/img/alex-suprun-A53o1drQS2k-unsplash.jpg" class="hover-shadow" alt="">
-        <img src="/img/chris-nguyen-aTX_bRaOZnA-unsplash.jpg" class="hover-shadow" alt="">
-        <img src="/img/dhiva-krishna-YApS6TjKJ9c-unsplash.jpg" class="hover-shadow" alt="">
-        <img src="/img/dima-panyukov-DwxlhTvC16Q-unsplash.jpg" class="hover-shadow" alt="">
-        <img src="/img/evgeny-tchebotarev-aiwuLjLPFnU-unsplash.jpg" class="hover-shadow" alt="">
-        <img src="/img/haidong-liang-1keMi3aD1gg-unsplash.jpg" class="hover-shadow" alt="">
-        <img src="/img/hakon-sataoen-qyfco1nfMtg-unsplash.jpg" class="hover-shadow" alt="">
-        <img src="/img/igor-lypnytskyi-m61MVp0w1p4-unsplash.jpg" class="hover-shadow" alt="">
-        <img src="/img/josh-berquist-0kxOW0I-HLM-unsplash.jpg" class="hover-shadow" alt="">
-        <img src="/img/joshua-koblin-eqW1MPinEV4-unsplash.jpg" class="hover-shadow" alt="">
-        <img src="/img/kenny-eliason-FcyipqujfGg-unsplash.jpg" class="hover-shadow" alt="">
-        <img src="/img/olav-tvedt-6lSBynPRaAQ-unsplash.jpg" class="hover-shadow" alt="">
-        <img src="/img/stefan-rodriguez-2AovfzYV3rc-unsplash.jpg" class="hover-shadow" alt="">
-        <img src="/img/tyler-clemmensen-4gSavS9pe1s-unsplash.jpg" class="hover-shadow" alt="">
-    </div>
+                <a href="/img/evgeny-tchebotarev-aiwuLjLPFnU-unsplash.jpg" data-lightbox="mygallery"><img
+                                class="gallery-img" id="img" src="/img/evgeny-tchebotarev-aiwuLjLPFnU-unsplash.jpg"
+                                alt=""></a>
+                <a href="/img/haidong-liang-1keMi3aD1gg-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img"
+                                id="img" src="/img/haidong-liang-1keMi3aD1gg-unsplash.jpg" alt=""></a>
+                <a href="/img/tyler-clemmensen-4gSavS9pe1s-unsplash.jpg" data-lightbox="mygallery"><img
+                                class="gallery-img" id="img" src="/img/tyler-clemmensen-4gSavS9pe1s-unsplash.jpg"
+                                alt=""></a>
+                <a href="/img/igor-lypnytskyi-m61MVp0w1p4-unsplash.jpg" data-lightbox="mygallery"><img
+                                class="gallery-img" id="img" src="/img/igor-lypnytskyi-m61MVp0w1p4-unsplash.jpg"
+                                alt=""></a>
+                <a href="/img/josh-berquist-0kxOW0I-HLM-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img"
+                                id="img" src="/img/josh-berquist-0kxOW0I-HLM-unsplash.jpg" alt=""></a>
+                <a href="/img/hakon-sataoen-qyfco1nfMtg-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img"
+                                id="img" src="/img/hakon-sataoen-qyfco1nfMtg-unsplash.jpg" alt=""></a>
 
-    <svg id="btn" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-        class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-        <path
-            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-    </svg> -->
+                <a href="/img/joshua-koblin-eqW1MPinEV4-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img"
+                                id="img" src="/img/joshua-koblin-eqW1MPinEV4-unsplash.jpg" alt=""></a>
+                <a href="/img/kenny-eliason-FcyipqujfGg-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img"
+                                id="img" src="/img/kenny-eliason-FcyipqujfGg-unsplash.jpg" alt=""></a>
+                <a href="/img/olav-tvedt-6lSBynPRaAQ-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img"
+                                id="img" src="/img/olav-tvedt-6lSBynPRaAQ-unsplash.jpg" alt=""></a>
+                <a href="/img/stefan-rodriguez-2AovfzYV3rc-unsplash.jpg" data-lightbox="mygallery"><img
+                                class="gallery-img" id="img" src="/img/stefan-rodriguez-2AovfzYV3rc-unsplash.jpg"
+                                alt=""></a>
+        </div>
 
-    <script src="app.js"></script>
-    <!-- <script type="text/javascript" src="lightbox-plus-jquery.min.js"></script> -->
+
+
+        <script src="app.js"></script>
+        <!-- <script type="text/javascript" src="lightbox-plus-jquery.min.js"></script>-->
 </body>
 
 </html>
-
-<!-- <div class="gallery">
-        <a href="/img/aaron-huber-8qYE6LGHW-c-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img" id="img"
-                src="/img/aaron-huber-8qYE6LGHW-c-unsplash.jpg" alt=""></a>
-        <a href="/img/alex-suprun-A53o1drQS2k-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img" id="img"
-                src="/img/alex-suprun-A53o1drQS2k-unsplash.jpg" alt=""></a>
-        <a href="/img/chris-nguyen-aTX_bRaOZnA-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img" id="img"
-                src="/img/chris-nguyen-aTX_bRaOZnA-unsplash.jpg" alt=""></a>
-        <a href="/img/dhiva-krishna-YApS6TjKJ9c-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img" id="img"
-                src="/img/dhiva-krishna-YApS6TjKJ9c-unsplash.jpg" alt=""></a>
-        <a href="/img/dima-panyukov-DwxlhTvC16Q-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img" id="img"
-                src="/img/dima-panyukov-DwxlhTvC16Q-unsplash.jpg" alt=""></a>
-        <a href="/img/evgeny-tchebotarev-aiwuLjLPFnU-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img" id="img"
-                src="/img/evgeny-tchebotarev-aiwuLjLPFnU-unsplash.jpg" alt=""></a>
-        <a href="/img/haidong-liang-1keMi3aD1gg-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img" id="img"
-                src="/img/haidong-liang-1keMi3aD1gg-unsplash.jpg" alt=""></a>
-        <a href="/img/hakon-sataoen-qyfco1nfMtg-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img" id="img"
-                src="/img/hakon-sataoen-qyfco1nfMtg-unsplash.jpg" alt=""></a>
-        <a href="/img/igor-lypnytskyi-m61MVp0w1p4-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img" id="img"
-                src="/img/igor-lypnytskyi-m61MVp0w1p4-unsplash.jpg" alt=""></a>
-        <a href="/img/josh-berquist-0kxOW0I-HLM-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img" id="img"
-                src="/img/josh-berquist-0kxOW0I-HLM-unsplash.jpg" alt=""></a>
-        <a href="/img/joshua-koblin-eqW1MPinEV4-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img" id="img"
-                src="/img/joshua-koblin-eqW1MPinEV4-unsplash.jpg" alt=""></a>
-        <a href="/img/kenny-eliason-FcyipqujfGg-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img" id="img"
-                src="/img/kenny-eliason-FcyipqujfGg-unsplash.jpg" alt=""></a>
-        <a href="/img/olav-tvedt-6lSBynPRaAQ-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img" id="img"
-                src="/img/olav-tvedt-6lSBynPRaAQ-unsplash.jpg" alt=""></a>
-        <a href="/img/stefan-rodriguez-2AovfzYV3rc-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img" id="img"
-                src="/img/stefan-rodriguez-2AovfzYV3rc-unsplash.jpg" alt=""></a>
-        <a href="/img/tyler-clemmensen-4gSavS9pe1s-unsplash.jpg" data-lightbox="mygallery"><img class="gallery-img" id="img"
-                src="/img/tyler-clemmensen-4gSavS9pe1s-unsplash.jpg" alt=""></a>
-    </div> -->

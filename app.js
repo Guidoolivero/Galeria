@@ -1,5 +1,15 @@
 let miImagen = document.getElementById('mainImage')
 let btn = document.getElementById('nextBtn')
+let btn2 = document.getElementById('prevBtn')
+
+// Obtener elementos del DOM
+var mainImage = document.getElementById('mainImage');
+var modal = document.getElementById('myModal');
+var modalImage = document.getElementById('modalImage');
+var closeBtn = document.getElementsByClassName('close')[0];
+
+
+
 
 var imagenes = [
     '/img/aaron-huber-8qYE6LGHW-c-unsplash.jpg',
@@ -21,7 +31,7 @@ var imagenes = [
 
 var indice = 1;
 
-function cambiarImagen() {
+function nextBtn() {
     miImagen.setAttribute('src', imagenes[indice])
     indice++;
     if (indice >= imagenes.length) {
@@ -29,56 +39,37 @@ function cambiarImagen() {
     }
 }
 
-var currentImageIndex = 0; // Variable para rastrear el índice de la imagen actual
 
-function openModal(img, index) {
-    var modal = document.getElementById("myModal");
-    var modalImg = document.getElementById("modalImage");
-    var prevBtn = document.getElementById("prevBtn");
-    var nextBtn = document.getElementById("nextBtn");
+function prevBtn() {
 
-    modal.style.display = "block";
-    modalImg.src = img.src;
-    currentImageIndex = index;
-
-    // Mostrar u ocultar las flechas según la posición de la imagen actual
-    if (currentImageIndex === 0) {
-        prevBtn.style.display = "none";
-    } else {
-        prevBtn.style.display = "block";
+    indice--;
+    if (indice < 0) {
+        indice = imagenes.length - 1;
     }
-
-    if (currentImageIndex === gallery.length - 1) {
-        nextBtn.style.display = "none";
-    } else {
-        nextBtn.style.display = "block";
-    }
+    miImagen.setAttribute('src', imagenes[indice]);
 }
 
-function closeModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "none";
+function openModal(imageUrl) {
+    var imageUrl = '/img/chris-nguyen-aTX_bRaOZnA-unsplash.jpg'
+
+    miImagen.setAttribute('src', imageUrl);
+    modal.style.display = 'block'; // Mostrar el modal
+    overlay.style.backgroundColor = 'transparent';
 }
 
-function showPrevImage() {
-    if (currentImageIndex > 0) {
-        currentImageIndex--;
-    } else {
-        currentImageIndex = gallery.length - 1;
-    }
 
-    var modalImg = document.getElementById("modalImage");
-    modalImg.src = gallery[currentImageIndex].src;
-}
+// Abrir modal con la imagen en grande
+mainImage.addEventListener('click', function () {
+    modal.style.display = 'block';
+    modalImage.src = mainImage.src;
+});
 
-function showNextImage() {
-    if (currentImageIndex < gallery.length - 1) {
-        currentImageIndex++;
-    } else {
-        currentImageIndex = 0;
-    }
+// Cerrar modal al hacer click en el botón de cerrar
+closeBtn.addEventListener('click', function () {
+    modal.style.display = 'none';
+});
 
-    var modalImg = document.getElementById("modalImage");
-    modalImg.src = gallery[currentImageIndex].src;
-}
 
+miImagen.addEventListener('click', openModal)
+btn.addEventListener('click', nextBtn)
+btn2.addEventListener('click', prevBtn)
